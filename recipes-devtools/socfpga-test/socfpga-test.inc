@@ -5,7 +5,7 @@ LICENSE = "GPLv2"
 
 S="${WORKDIR}/linux-test"
 BP="${BPN}"
-DEPENDS = "virtual/kernel vlan"
+DEPENDS = "virtual/kernel"
 
 # git:/git.linaro.org/git-ro/arm/ds5/gator.git;protocol=http
 # This variable points to rocketboards by default. It can be overridden
