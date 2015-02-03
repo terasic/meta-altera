@@ -20,6 +20,9 @@ SRCREV_pn-${PN} = "${LINUX_TEST_TAG}"
 
 LIC_FILES_CHKSUM="file://${S}/LICENSE;md5=a2c916c096f4cf1974df39bedd5cb1bf"
 
+INHIBIT_PACKAGE_STRIP = "1"
+INHIBIT_PACKAGE_STRIP-dev = "1"
+
 do_compile() {
 
 	cd ${S}
