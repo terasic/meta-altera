@@ -10,8 +10,8 @@ inherit module
 
 SRC_URI = "git://git.linaro.org/git-ro/arm/ds5/gator.git;protocol=http"
 SRCREV="c3fc2b13fd58f1f5db521a062f0bbf782874383c"
-INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
-INHIBIT_PACKAGE_DEBUG_SPLIT-dev = "1"
+INHIBIT_PACKAGE_STRIP = "1"
+INHIBIT_PACKAGE_STRIP-dev = "1"
 
 INSANE_SKIP_${PN}-dev += " ldflags"
 INSANE_SKIP_${PN} += " ldflags"
