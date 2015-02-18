@@ -1,4 +1,6 @@
 UBOOT_SUFFIX ?= "img"
+UBOOT_RAW_BINARY ?= "u-boot-dtb.bin"
+UBOOT_DTB ?= "u-boot.dtb"
 
 require ${COREBASE}/meta/recipes-bsp/u-boot/u-boot.inc
 
@@ -21,24 +23,10 @@ SPL_UART_BINARY ?= ""
 SPL_UART_IMAGE ?= "${SPL_UART_BINARY}-${MACHINE}-${PV}-${PR}"
 SPL_UART_SYMLINK ?= "${SPL_UART_BINARY}-${MACHINE}"
 
-#do_install_append () {
-#    if [ "x${SPL_UART_BINARY}" != "x" ]
-#    then
-#        install ${S}/spl/${SPL_UART_BINARY} ${D}/boot/${SPL_UART_IMAGE}
-#        ln -sf ${SPL_UART_IMAGE} ${D}/boot/${SPL_UART_BINARY}
-#    fi
-#}
-#
-#do_deploy_append () {
-#    cd ${DEPLOYDIR}
-#    if [ "x${SPL_UART_BINARY}" != "x" ]
-#    then
-#        install ${S}/spl/${SPL_UART_BINARY} ${DEPLOYDIR}/${SPL_UART_IMAGE}
-#        rm -f ${DEPLOYDIR}/${SPL_UART_BINARY} ${DEPLOYDIR}/${SPL_UART_SYMLINK}
-#        ln -sf ${SPL_UART_IMAGE} ${DEPLOYDIR}/${SPL_UART_BINARY}
-#        ln -sf ${SPL_UART_IMAGE} ${DEPLOYDIR}/${SPL_UART_SYMLINK}
-#    fi
-#}
+do_deploy_append () {
+    install ${S}/${UBOOT_RAW_BINARY} ${DEPLOYDIR}/${UBOOT_RAW_BINARY}
+    install ${S}/${UBOOT_DTB} ${DEPLOYDIR}/${UBOOT_DTB}
+}
 
 # DEPEND on dtc-native for mainline u-boot because the mainline u-boot depends
 # on some of the latest syntax constructs for an appended in dtb used for
@@ -47,15 +35,13 @@ DEPENDS += "dtc-native"
 
 DESCRIPTION = "Mainline u-boot bootloader"
 
-DEFAULT_PREFERENCE = "-1"
-
 LIC_FILES_CHKSUM = "file://Licenses/README;md5=c7383a594871c03da76b3707929d2919"
 
 PV = "2014.10"
 
 SRC_URI = "git://at-git/uboot-bringup.git;protocol=git;branch=socfpga_arria10_v2014.10_cleaned_v1"
 
-#BRANCH ?= "socfpga_arria10_v2014.10_cleaned_v1"
+BRANCH ?= "socfpga_arria10_v2014.10_cleaned_v1"
 
 # Corresponds to tag v2015.01-rc4 plus more fixes
 SRCREV = "${AUTOREV}"
