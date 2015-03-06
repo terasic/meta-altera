@@ -39,10 +39,9 @@ LIC_FILES_CHKSUM = "file://Licenses/README;md5=c7383a594871c03da76b3707929d2919"
 
 PV = "2014.10"
 
-SRC_URI = "git://at-git/uboot-bringup.git;protocol=git;branch=socfpga_arria10_v2014.10_cleaned_v1"
+UBOOT_BRANCH ?= "socfpga_${PV}"
 
-BRANCH ?= "socfpga_arria10_v2014.10_cleaned_v1"
+SRC_URI = "git://at-git/uboot-bringup.git;protocol=git;branch=${UBOOT_BRANCH}"
 
-# Corresponds to tag v2015.01-rc4 plus more fixes
 SRCREV = "${AUTOREV}"
 
