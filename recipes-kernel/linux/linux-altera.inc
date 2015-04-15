@@ -20,6 +20,15 @@ S = "${WORKDIR}/git"
 
 MACHINE_DEFCONFIG = "${KERNEL_DEFCONFIG}"
 
+# returns all the elements from the src uri that are .cfg files
+def find_config_fragments(d):
+    sources=src_patches(d, True)
+    sources_list=[]
+    for s in sources:
+        if s.endswith('.cfg'):
+            sources_list.append(s)
+    return sources_list
+
 do_configure() {
 	export INITRAMFS_IMAGE_FILE="${INITRAMFS_IMAGE}-${MACHINE}.cpio"
 
@@ -56,6 +65,16 @@ do_configure() {
 		sed -i "s|^CONFIG_INITRAMFS_COMPRESSION_NONE=.*$|# CONFIG_INITRAMFS_COMPRESSION_NONE is not set|g" .config
 		oe_runmake oldconfig
 	fi	
+
+	CFG_FILES="${@" ".join(find_config_fragments(d))}"
+	if [ ! -z "$CFG_FILES" ]; then
+                for i in $CFG_FILES; do
+                        echo "# $i" >> .config
+                        cat $i >> .config
+                done
+		oe_runmake oldconfig
+        fi
+
 }
 
 kernel_do_compile() {
