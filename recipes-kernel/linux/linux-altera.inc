@@ -107,4 +107,9 @@ kernel_do_deploy_append() {
 		rm -f vmlinux &&
 		ln -sf ${VMLINUX_NAME} vmlinux
 }
+PACKAGES =+ "kernel-headers"
+FILES_kernel-headers = "${exec_prefix}/src/linux*"
 
+do_install_append() {
+	oe_runmake headers_install INSTALL_HDR_PATH=${D}${exec_prefix}/src/linux-${KERNEL_VERSION} ARCH=$ARCH
+}
