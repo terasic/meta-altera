@@ -37,12 +37,13 @@ DESCRIPTION = "Mainline u-boot bootloader"
 
 LIC_FILES_CHKSUM = "file://Licenses/README;md5=c7383a594871c03da76b3707929d2919"
 
-PV = "2014.10"
+PV = "v2014.10"
 
-UBOOT_BRANCH ?= "socfpga_${PV}"
-UBOOT_REPO ?= "http://git.rocketboards.org/u-boot-socfpga.git"
+UBOOT_BRANCH ?= "socfpga_${PV}_arria10_bringup"
+UBOOT_REPO ?= "git://github.com/altera-opensource/u-boot-socfpga.git"
+UBOOT_PROT ?= "https"
 
-SRC_URI = "${UBOOT_REPO};protocol=git;branch=${UBOOT_BRANCH}"
+SRC_URI = "${UBOOT_REPO};protocol=${UBOOT_PROT};branch=${UBOOT_BRANCH}"
 
 SRCREV = "${AUTOREV}"
 
