@@ -8,7 +8,7 @@ S="${WORKDIR}/git"
 REFDES_REPO ?= "git://github.com/altera-opensource/linux-refdesigns.git"
 REFDES_PROT ?= "http"
 REFDES_BRANCH ?= "socfpga-14.0.1"
-SRCREV = "1c757ba635747c7ddbdc4746d62820b0c1fa9f7f"
+SRCREV = "9d3fad7553e5075212b5c4630d90ae60afea5417"
 
 SRC_URI = "${REFDES_REPO};protocol=${REFDES_PROT};branch=${REFDES_BRANCH} "
 
