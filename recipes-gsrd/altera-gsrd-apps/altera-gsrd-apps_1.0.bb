@@ -34,6 +34,7 @@ do_install() {
         install -m 0755 scroll_client/scroll_client ${D}/www/pages/cgi-bin/scroll_client
         install -m 0755 toggle/toggle ${D}/www/pages/cgi-bin/toggle
 
+        install -m 0755 syschk/syschk ${D}/home/root/altera/syschk
         install -m 0755 blink/blink ${D}/home/root/altera/blink
         install -m 0755 scroll_client/scroll_client ${D}/home/root/altera/scroll_client
         install -m 0755 toggle/toggle ${D}/home/root/altera/toggle
