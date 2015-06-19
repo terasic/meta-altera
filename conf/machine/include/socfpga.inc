@@ -10,6 +10,9 @@ PREFERRED_PROVIDER_virtual/kernel = "${KERNEL_PROVIDER}"
 
 PREFERRED_PROVIDER_virtual/bootloader = "u-boot-socfpga"
 
+PREFFERED_VERSION_u-boot-socfpga-cyclone5 = "2013.01.01"
+PREFFERED_VERSION_u-boot-socfpga-arria5 = "2013.01.01"
+
 # Increase this everytime you change something in the kernel
 MACHINE_KERNEL_PR = "r1"
 
