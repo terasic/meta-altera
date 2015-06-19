@@ -1,7 +1,8 @@
 PR = "r1"
 
-KERNEL_REPO ?= "git://git.rocketboards.org/linux-socfpga.git"
-KERNEL_PROT ?= "http"
+KERNEL_REPO ?= "git://github.com/altera-opensource/linux-socfpga.git"
+KERNEL_PROT ?= "https"
+
 KERNEL_DEFCONFIG ?= "socfpga_defconfig"
 KERNEL_TAG ?= "${AUTOREV}"
 
@@ -126,9 +127,11 @@ kernel_do_deploy_append() {
 		rm -f vmlinux &&
 		ln -sf ${VMLINUX_NAME} vmlinux
 }
+
 PACKAGES =+ "kernel-headers"
 FILES_kernel-headers = "${exec_prefix}/src/linux*"
 
 do_install_append() {
 	oe_runmake headers_install INSTALL_HDR_PATH=${D}${exec_prefix}/src/linux-${KERNEL_VERSION} ARCH=$ARCH
 }
+
