@@ -1,0 +1,5 @@
+define KFEATURE_DESCRIPTION "Altera Cyclone5 SoC IP Core Drivers/Support"
+define KFEATURE_COMPATIBILITY board
+
+kconfig hardware cyclone5-ip.cfg
+kconfig hardware cyclone5_arria5-ip.cfg

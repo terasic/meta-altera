@@ -1,8 +1,6 @@
-PR = "r6"
+PR = "r1"
 
-LINUX_VERSION = "3.10"
-
-KBRANCH = "socfpga-3.10-ltsi"
+LINUX_VERSION = "4.0"
 
 SRCREV ?= "${AUTOREV}"
 
