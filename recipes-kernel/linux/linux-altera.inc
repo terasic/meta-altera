@@ -1,13 +1,15 @@
 KERNEL_REPO ?= "git://github.com/altera-opensource/linux-socfpga.git"
 KERNEL_PROT ?= "https"
 
-LINUX_VERSION_PREFIX ?= "socfpga"
-
+# Kernel CONFIG_LOCALVERSION
 LINUX_VERSION_EXTENSION ?= "-altera"
 
-KBRANCH ?= "${LINUX_VERSION_PREFIX}-${LINUX_VERSION}"
+# Build branch name
+LINUX_VERSION_PREFIX ?= "socfpga-"
+LINUX_VERSION = "${PV}"
+LINUX_VERSION_SUFFIX ?= ""
 
-PV = "${LINUX_VERSION}+git${SRCPV}"
+KBRANCH ?= "${LINUX_VERSION_PREFIX}${LINUX_VERSION}${LINUX_VERSION_SUFFIX}"
 
 SRC_URI = "${KERNEL_REPO};protocol=${KERNEL_PROT};branch=${KBRANCH}"
 

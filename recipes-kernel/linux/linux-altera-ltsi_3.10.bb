@@ -1,10 +1,6 @@
-PR = "r7"
+PR = "r1"
 
-LINUX_VERSION = "3.10"
-
-KBRANCH = "socfpga-3.10-ltsi"
-
-KERNEL_DEVICETREE = "socfpga_vt.dtb socfpga_cyclone5.dtb socfpga_arria5.dtb"
+LINUX_VERSION_SUFFIX = "-ltsi"
 
 SRCREV ?= "${AUTOREV}"
 
