@@ -1,4 +1,4 @@
-define KMACHINE cyclone5
+define KMACHINE arria10
 define KTYPE standard
 define KARCH arm
 
