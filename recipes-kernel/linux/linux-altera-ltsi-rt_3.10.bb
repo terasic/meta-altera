@@ -1,4 +1,4 @@
-PR = "r2"
+PR = "r5"
 
 LINUX_VERSION_SUFFIX = "-ltsi-rt"
 
