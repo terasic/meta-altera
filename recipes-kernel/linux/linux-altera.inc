@@ -16,7 +16,7 @@ LINUX_VERSION ?= "4.0"
 
 SRCREV_machine ?= "${AUTOREV}"
 PV = "${LINUX_VERSION}"
-PV_append = "+git${SRCREV}"
+PV_append = "+git${SRCPV}"
 
 
 KBRANCH ?= "${LINUX_VERSION_PREFIX}${LINUX_VERSION}${LINUX_VERSION_SUFFIX}"
