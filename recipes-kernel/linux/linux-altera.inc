@@ -6,15 +6,14 @@ LINUX_VERSION_EXTENSION ?= "-altera"
 
 # Build branch name
 LINUX_VERSION_PREFIX ?= "socfpga-"
-LINUX_VERSION = "${PV}"
 LINUX_VERSION_SUFFIX ?= ""
+PV = "${LINUX_VERSION_PREFIX}-${LINUX_VERSION}${LINUX_VERSION_SUFFIX}+git${SRCREV}"
+
 
 KBRANCH ?= "${LINUX_VERSION_PREFIX}${LINUX_VERSION}${LINUX_VERSION_SUFFIX}"
 
 SRC_URI = "${KERNEL_REPO};protocol=${KERNEL_PROT};branch=${KBRANCH}"
 
-
-SRCREV_machine = "${SRCREV}"
 
 require recipes-kernel/linux/linux-yocto.inc
 

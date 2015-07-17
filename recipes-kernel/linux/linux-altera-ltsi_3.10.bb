@@ -1,9 +1,8 @@
-
-LINUX_VERSION_SUFFIX = "-ltsi"
+PR = "r5"
 
 SRCREV ?= "${AUTOREV}"
-PR = "r5"
-PV = "3.10-${PR}+git${SRCREV}"
+LINUX_VERSION = "3.10"
+LINUX_VERSION_SUFFIX = "-ltsi"
 
 require recipes-kernel/linux/linux-altera.inc
 

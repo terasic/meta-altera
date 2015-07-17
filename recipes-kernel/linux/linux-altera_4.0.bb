@@ -1,7 +1,7 @@
 PR = "r5"
 
 SRCREV ?= "${AUTOREV}"
-PV = "4.0-${PR}+git${SRCREV}"
+LINUX_VERSION = "4.0"
 
 require recipes-kernel/linux/linux-altera.inc
 
