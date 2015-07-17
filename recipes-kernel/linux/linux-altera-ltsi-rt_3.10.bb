@@ -1,7 +1,5 @@
-PR = "r5"
+include linux-altera.inc
 
+PR = "r5"
 LINUX_VERSION = "3.10"
 LINUX_VERSION_SUFFIX = "-ltsi-rt"
-
-require recipes-kernel/linux/linux-altera.inc
-
