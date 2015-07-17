@@ -12,9 +12,10 @@ LINUX_VERSION_EXTENSION ?= "-altera"
 # Build branch name
 LINUX_VERSION_PREFIX ?= "socfpga-"
 LINUX_VERSION_SUFFIX ?= ""
-LINUX_VERSION ?= "${PV}"
+LINUX_VERSION ?= "4.0"
 
 SRCREV ?= "${AUTOREV}"
+PV = "${LINUX_VERSION}"
 PV_append = "+git${SRCREV}"
 
 
