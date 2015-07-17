@@ -14,7 +14,7 @@ LINUX_VERSION_PREFIX ?= "socfpga-"
 LINUX_VERSION_SUFFIX ?= ""
 LINUX_VERSION ?= "4.0"
 
-SRCREV ?= "${AUTOREV}"
+SRCREV_machine ?= "${AUTOREV}"
 PV = "${LINUX_VERSION}"
 PV_append = "+git${SRCREV}"
 
