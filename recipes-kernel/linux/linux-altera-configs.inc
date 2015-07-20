@@ -1,5 +1,5 @@
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/config:"
 SRC_URI_append += " \
-		file://${KBRANCH};type=kmeta;destsuffix=${KBRANCH} \
+		file://socfpga-base;type=kmeta;destsuffix=socfpga-base \
 		"
